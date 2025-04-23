@@ -1,5 +1,5 @@
-name: 'action-fail-on-retry'
-description: 'Simple GitHub Action to fail a job if it has been retried'
+name: 'action-fail-on-rerun'
+description: 'Simple GitHub Action to fail a job if it has been Re-run'
 author: 'CDQ AG'
 
 branding:
@@ -9,11 +9,11 @@ branding:
 inputs:
   error-title:
     description: 'Error title'
-    default: 'Job retry disabled'
+    default: 'Job Re-run Not Allowed'
 
   error-message:
     description: 'Error message'
-    default: 'Owner of this repo disabled possibility to retry this job'
+    default: 'Owner of this repo disabled possibility to Re-run this job'
 
 runs:
   using: composite

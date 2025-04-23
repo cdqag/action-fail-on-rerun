@@ -1,17 +1,17 @@
-# action-fail-on-retry
+# action-fail-on-rerun
 
 Simple GitHub Action to fail a job if it has been retried.
-GitHub does not give possibility to hide a Retry job from the UI. So a workaround is to fail the job if it has been retried.
+GitHub does not give possibility to hide a Re-run job from the UI. So a workaround is to fail the job if it has been retried.
 
 ## Inputs
 
 * `error-title`
 
-    The error title. Default is `Job retry disabled`.
+    The error title. Default is `Job Re-run Not Allowed`.
 
 * `error-message`
 
-    The error message. Default is `Owner of this repo disabled possibility to retry this job`.
+    The error message. Default is `Owner of this repo disabled possibility to Re-run this job`.
 
 ## Example usage
 
@@ -25,7 +25,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    - uses: cdqag/action-fail-on-retry@v1 # Must be a first step to work as a guard
+    - uses: cdqag/action-fail-on-rerun@v1 # Must be a first step to work as a guard
 
     # Rest of your job steps
 
