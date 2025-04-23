@@ -11,7 +11,7 @@ GitHub does not give possibility to hide a Re-run job from the UI. So a workarou
 
 * `error-message`
 
-    The error message. Default is `Owner of this repo disabled possibility to Re-run this job`.
+    The error message. Default is `Owner of this workflow disabled possibility to Re-run this job`.
 
 ## Example usage
 
