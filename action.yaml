@@ -1,0 +1,29 @@
+name: 'action-fail-on-retry'
+description: 'Simple GitHub Action to fail a job if it has been retried'
+author: 'CDQ AG'
+
+branding:
+  icon: 'rotate-ccw'
+  color: 'red'
+
+inputs:
+  error-title:
+    description: 'Error title'
+    default: 'Job retry disabled'
+
+  error-message:
+    description: 'Error message'
+    default: 'Owner of this repo disabled possibility to retry this job'
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        ERROR_TITLE: ${{ inputs.error-title }}
+        ERROR_MESSAGE: ${{ inputs.error-message }}
+      run: |
+        if [ "$GITHUB_RUN_ATTEMPT" -gt 1 ]; then
+          echo "::error title=$ERROR_TITLE::$ERROR_MESSAGE"
+          exit 1
+        fi
